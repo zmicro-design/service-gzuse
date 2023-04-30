@@ -1,0 +1,11 @@
+services:
+  gzuse:
+    restart: always
+    image: whatwewant/gzuse:${SERVICE_GZUSE_IMAGE_VERSION}
+    environment:
+      MEMORY: $SERVICE_GZUSE_MEMORY
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress

@@ -1,0 +1,14 @@
+services:
+  gzuse:
+    restart: always
+    image: whatwewant/gzuse:${SERVICE_GZUSE_IMAGE_VERSION}
+    environment:
+      MEMORY: ${SERVICE_GZUSE_MEMORY}
+      # MEMORY_PERCENT: ${SERVICE_GZUSE_MEMORY_PERCENT}
+      CPU_CORE: ${SERVICE_GZUSE_CPU_CORE}
+      CPU_PERCENT: ${SERVICE_GZUSE_CPU_PERCENT}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
